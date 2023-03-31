@@ -41,7 +41,7 @@ function App () {
 
   const onSearch = (id) => {
 
-    const URL_BASE = "http://localhost:3001/rickandmorty";
+    const URL_BASE = "http://localhost:3001";
         // const KEY = "8e2a27fa2bac.a435f2ada59bba4ec749"
 
    if  (characters.find((char) => char.id === id)){

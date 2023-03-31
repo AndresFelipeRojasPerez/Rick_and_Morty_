@@ -1,4 +1,4 @@
-import { ADD_FAVORITE, DELETE_FAVORITE, ORDER, FILTER } from "./actions";
+import { ADD_FAVORITE, DELETE_FAVORITE, ORDER, FILTER, GET_FAVORITES } from "./actions";
 
 const initialState = {
     myFavorites : [],
@@ -22,17 +22,21 @@ const rootReducer = (state= initialState, action) => {
             case FILTER:
             return {...state,
                      myFavorites: state.allCharacters.filter ((char) => 
-                     char.gender === action.paylod),}
+                     char.gender === action.paylod),};
 
             
+                     
+                     
             case ORDER:
-            return {...state, 
-                     myFavorites: state.allCharacters.sort ((x,y) => {
-                     if (action.paylod == "Ascendente") {x.id - y.id}
-                     else(action.paylod == "Descendente"); {y.id - x.id}
-                     })}
-
-
+                         return {...state, 
+                            myFavorites: state.allCharacters.sort ((x,y) => {
+                                if (action.paylod == "Ascendente") {x.id - y.id}
+                                else(action.paylod == "Descendente"); {y.id - x.id}
+                            })}
+                            
+            case GET_FAVORITES: 
+                    return {...state, myFavorites: action.payload}
+                            
             default: 
             return {...state};
     }

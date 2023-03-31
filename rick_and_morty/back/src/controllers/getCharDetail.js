@@ -1,26 +1,29 @@
 const axios = require ("axios")
-const {URL_BASE, KEY} = process.env;
+// const { URL_BASE, KEY } = process.env;
+
+const URL_BASE = "https://be-a-rym.up.railway.app/api";
+const KEY = "8e2a27fa2bac.a435f2ada59bba4ec749";
+
+
+const getCharDetail  = (req,res) => {
+    const {id} = req.params
 
 
     const successH= (response, res) => {
-        const {name, gender, status, origin, species, image} = response.data
-       
-        res.writeHead(200,{"Content-Type" : "application/json"});
-        res.end(JSON.stringify({name, gender, status, origin, species, image}));
-        };
-
-
-        const errorH = (error, res) => {
-            res.writeHead(500, {"Content-Type" : "text/plain"});
-            res.end(error.message);
-        };
-
-    const getCharDetail = (res, id) => {
-        axios
+        const {id,image,name,gender,species,origin} = response.data
+        res.status(200).json({id,image,name,gender,species,origin});
+    };
+        
+            
+    const errorH = (error) => {
+        res.status(500).json({error: error.message})
+    };
+ 
+    axios 
         .get(`${URL_BASE}/character/${id}?key=${KEY}`)
-        .then((response) => successH(response,res))
-        .catch((error) => errorH(error,res));
+        .then ((response) => successH(response, res))
+        .catch((error) => errorH(error));
 
-};
+}
 
 module.exports = getCharDetail;

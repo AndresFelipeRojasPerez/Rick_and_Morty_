@@ -1,9 +1,11 @@
 import React from "react";
 import style from "./Card.module.css";
+import axios from "axios"
 import { Link } from "react-router-dom";
-import { addFavorite, deleteFavorite } from "../../redux/actions";
-import { connect } from "react-redux";
+import { addFavorite, deleteFavorite, getFavorites } from "../../redux/actions";
+import { connect, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 
 function Card({
@@ -13,12 +15,29 @@ function Card({
    gender,
    image,
    onClose,
-   addFavorite, 
-   deleteFavorite, 
-   myFavorites
+   myFavorites,
 }) {
    
 const [isFav, setIsFav] = useState (false);
+
+const dispatch = useDispatch();
+
+
+const addFavorite = async (character) =>{
+   await axios.post("http://localhost:3001/rickandmorty/fav", character)
+   .then((res) => console.log("ok"));
+   dispatch(getFavorites());
+
+};
+
+
+
+const deleteFavorite = async (id) => {
+   await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
+   dispatch(getFavorites());
+   alert("Eliminado con exito")
+}
+
 
 const handleFavorite = () => {
 if (isFav) {
@@ -32,9 +51,6 @@ if (isFav) {
       species, 
       gender, 
       image, 
-      onClose,
-      addFavorite,
-      deleteFavorite,
    })
 
 }};
@@ -50,10 +66,10 @@ useEffect(() => {
    return (
       <div className= {style.container}>
 
-         {isFav ? (
-      <button onClick={handleFavorite}>❤️</button>
+        {isFav ? (
+      <button className= {style.boton.fav1} onClick={handleFavorite}>❤️</button>
    ) : (
-      <button onClick={handleFavorite}>🤍</button>
+      <button className= {style.boton.fav2} onClick={handleFavorite}>🤍</button>
    )}
 
          <button className= {style.boton} onClick={() => onClose(id)}>X</button>
@@ -70,9 +86,6 @@ useEffect(() => {
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      addFavorite: (character) => {
-         dispatch(addFavorite(character))
-      },
       deleteFavorite: (id) => {
          dispatch(deleteFavorite(id))
       },

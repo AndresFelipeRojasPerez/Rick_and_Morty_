@@ -2,10 +2,13 @@ import { connect, useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Card from "../Card/Card"
 import { orderCards, filterCards } from "../../redux/actions";
+import { getFavorites } from "../../redux/actions";
+import { useEffect } from "react";
 
 const Favorites = ({myFavorites}) => {
+    
 
-    const  dispatch = useDispatch();
+
 
 
     const handleChangeOrder = (event) => {
@@ -19,8 +22,6 @@ const Favorites = ({myFavorites}) => {
         const evento = event.target.value;
         dispatch(filterCards(evento))
     }
-
-        
 
     return (
         
