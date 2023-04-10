@@ -26,7 +26,7 @@ function App () {
   function login(userData) {
     if ((userData.password === password1 && userData.userName === username1) || (userData.password === password2 && userData.userName === username2)) {
        setAccess(true);
-       navigate('/home');
+       navigate('/home', );
     }else {
       alert("Datos erróneos")
     }
@@ -64,14 +64,14 @@ function App () {
   }
 
   return (
-    <div className={style.App} style={{ padding: '25px' }}>
+    <div className={style.App}>
      
       {pathname !== "/" && <Nav onSearch = {onSearch}/>}
         
         {/* <img className={style.imagen} src="https://1000logos.net/wp-content/uploads/2022/03/Rick-and-Morty.png" alt="Rick and Morty" /> */}
       
       <Routes>
-        <Route path="/" element={<Form login={login}/>} />
+        <Route path="/" element={<Form className={style.formView} login={login}/>} />
         <Route path="/home"
         element = {<Cards characters={characters} onClose={onClose}/>}
         />

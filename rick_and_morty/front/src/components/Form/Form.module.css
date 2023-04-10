@@ -1,0 +1,89 @@
+.container{
+    display: flex;
+    text-align: center;
+    background-image: url("../assets/images/tumblr_rick.gif");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center center;   
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+ 
+ }
+
+.titulo{
+    color: rgba(44, 200, 211, 0.879);
+    font-family: "Get Schwifty";
+    -webkit-text-stroke: 0.2px chartreuse;
+    font-size:xx-large;
+}
+
+.containerForm {
+        width: 600px;
+        height: 200px;
+        border-radius: 12px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:  translate(-50%, -50%);
+        background-color: rgba(137, 43, 226, 0.562);
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        border-style: none;
+        
+}
+
+.containerForm:hover {
+    background: rgba(137, 43, 226, 0.562);
+    box-shadow: 
+    0 0 10px rgba(137, 43, 226, 0.562),
+    0 0 40px rgba(137, 43, 226, 0.562),
+    0 0 80px rgba(137, 43, 226, 0.562);
+
+}
+
+.inputUsername{
+    background-color: rgba(95, 158, 160, 0.402);
+    color:rgba(63, 230, 242, 0.879);
+    border-radius: 12px;
+
+} 
+
+.inputPassword{
+    background-color: rgba(95, 158, 160, 0.402);
+    color:rgba(63, 230, 242, 0.879);
+    border-radius: 12px;
+
+}
+
+.btn{
+    background-color: chartreuse;
+    border-radius: 12px;
+}
+
+.btn:hover {
+    background: rgba(137, 43, 226, 0.562);
+    box-shadow: 
+    0 0 10px rgba(137, 43, 226, 0.562),
+    0 0 40px rgba(137, 43, 226, 0.562),
+    0 0 80px rgba(137, 43, 226, 0.562);
+
+}
+
+.labelUsername{
+    color: chartreuse;
+}
+
+.labelPassword{
+    color: chartreuse;
+}
+
+.errorUsername{
+    color: red;
+}
+
+.errorPassword{
+    color: red;
+}

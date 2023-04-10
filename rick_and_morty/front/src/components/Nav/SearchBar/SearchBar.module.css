@@ -1,11 +1,9 @@
-.container {
-    margin-left: 40%;
-}
+
 .input {
-    
     background-color: rgb(17, 10, 65);
     color:white;
     border-style: none;
+    border-radius: 12px;
 }
 
 .input:hover {
@@ -22,9 +20,10 @@
     background-image: url("https://th.bing.com/th/id/R.eafe39bc7e3c39efb652560e03ce5aea?rik=YK4lsydkA5Ainw&riu=http%3a%2f%2f33.media.tumblr.com%2f6bbb4fd81f57e051221fd22d1e6d8fab%2ftumblr_nnnfunuRJw1s4fz4bo1_500.gif&ehk=hbAmBiCypYxwEuZxUt1NOQQDqyNTJCi9Yet8yRxUApY%3d&risl=&pid=ImgRaw&r=0");
    height: 70px;
    width: 70px;
+   align-self: center;
+   margin-top: 2%;
    background-position: center;
    margin-left: 2px ;
-   margin-top: 5%;
    border-radius: 50%;
    border-style: none;
 

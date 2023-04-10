@@ -10,7 +10,20 @@
    flex-direction: column;
    margin: 0;
 
-   
+}
+
+.formView{
+   display: flex;
+   text-align: center;
+   background-image: url("./components/assets/images/tumblr_rick.gif");
+   background-repeat: no-repeat;
+   background-size:cover;
+   background-attachment: fixed;
+   background-position: center center;   
+   min-height: 100vh;
+   flex-direction: column;
+   margin: 0;
+
 }
 .imagen {
    

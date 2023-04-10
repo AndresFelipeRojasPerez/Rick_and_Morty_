@@ -1,10 +1,42 @@
 .container {
-    align-items: center;
-    margin-left:5%;
+    background-color: rgba(49, 86, 86, 0.692);
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    justify-items: right;
+    flex-direction:row;
     width: 90%;
     height: 5em;
+    margin-bottom: 5%;
+    align-self: center;
+    border-radius: 20px;
+}
 
-    
+.aboutLink {
+    color: aqua;
+    align-self: center;
+    margin-left: 3%;
+    text-decoration:none;
+    font-size:larger;
+}
+
+.aboutHome {
+    color: black;
+    align-self: center;
+    text-decoration:none;
+    font-size:larger;
+}
+
+.aboutFavorites {
+    color: bisque;
+    align-self: center;
+    text-decoration:none;
+    font-size:larger;
+}
+
+.aboutLogout {
+    color: chartreuse;
+    align-self: center;
+    margin-right: 3%;
+    text-decoration:none;
+    font-size:larger;
 }
